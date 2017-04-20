@@ -4,6 +4,7 @@ pipeline {
     stage('Tools') {
       steps {
         echo 'Pull From SCM'
+        deleteDir()
       }
     }
   }
