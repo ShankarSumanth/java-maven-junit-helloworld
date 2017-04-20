@@ -4,7 +4,6 @@ pipeline {
     stage('Tools') {
       steps {
         echo 'Pull From SCM'
-        tool(name: 'Git', type: 'Git')
       }
     }
   }
