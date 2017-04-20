@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        bat(script: '%MAVEN_HOME%/bin/mvn clean install', returnStatus: true, returnStdout: true, encoding: 'UTF-8')
+        bat(script: 'maven/bin/mvn clean install', returnStatus: true, returnStdout: true, encoding: 'UTF-8')
       }
     }
   }
