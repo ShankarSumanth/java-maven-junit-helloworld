@@ -1,9 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('Tools') {
+    stage('Checkout') {
       steps {
-        echo 'Pull From SCM'
+        echo 'Pull From SCM Complete'
+      }
+    }
+    stage('Build') {
+      steps {
+        sh 'mvn clean install'
       }
     }
   }
