@@ -1,9 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Message') {
+    stage('Tools') {
       steps {
         echo 'Pull From SCM'
+        tool(name: 'Git', type: 'Git')
       }
     }
   }
