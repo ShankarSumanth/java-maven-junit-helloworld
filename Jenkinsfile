@@ -1,6 +1,5 @@
 pipeline {
   agent any
-  def mvnHome
   stages {
     stage('Tools') {
       steps {
@@ -13,7 +12,7 @@ pipeline {
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
-      mvnHome = tool 'M3'
+      tool name: 'M3', type: 'maven'
    }
    stage('Build') {
       // Run the maven build
