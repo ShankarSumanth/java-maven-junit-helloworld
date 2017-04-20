@@ -9,7 +9,7 @@ pipeline {
     stage('Preparation') {
       steps {
         git 'https://github.com/ShankarSumanth/java-maven-junit-helloworld.git'
-        tool 'M3'
+        mvnHome = tool 'M3'
       }
     }
     stage('Build') {
