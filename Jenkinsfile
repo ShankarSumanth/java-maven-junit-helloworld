@@ -9,11 +9,11 @@ pipeline {
     stage('Preparation') {
       steps {
         git 'https://github.com/ShankarSumanth/java-maven-junit-helloworld.git'
-        mvnHome = tool 'M3'
       }
     }
     stage('Build') {
       steps {
+        tool 'M3'
         sh '"\'${mvnHome}/bin/mvn\' -Dmaven.test.failure.ignore clean package"'
       }
     }
