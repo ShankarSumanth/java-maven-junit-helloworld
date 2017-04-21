@@ -6,10 +6,8 @@ pipeline {
         echo 'Start Build'
       }
     }
-    stage('Preparation') {
-      steps {
-        git 'https://github.com/ShankarSumanth/java-maven-junit-helloworld.git'
-      }
+    stage('Checkout') {
+      checkout scm
     }
     stage('Build') {
       steps {
