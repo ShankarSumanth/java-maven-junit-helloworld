@@ -1,10 +1,10 @@
 pipeline {
-    agent any
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        tool(name: 'M3', type: 'maven')
+      }
     }
+  }
 }
