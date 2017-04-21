@@ -1,26 +1,15 @@
 pipeline {
-  agent any
-  stages {
-    stage('Tools') {
-      steps {
-        echo 'Start Build'
-      }
+    agent any
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+            }
+        }
     }
-    stage('Checkout') {
-      steps{
-        checkout scm 
-      }
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
     }
-    stage('Build') {
-      steps {
-        sh 'mvn -Dmaven.test.failure.ignore clean package'
-      }
-    }
-    stage('Results') {
-      steps {
-        junit '**/target/surefire-reports/TEST-*.xml'
-        archive 'target/*.jar'
-      }
-    }
-  }
 }
