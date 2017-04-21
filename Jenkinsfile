@@ -4,7 +4,6 @@ pipeline {
     stage('Build') {
       steps {
         tool(name: 'M3', type: 'maven')
-        M3 clean
       }
     }
   }
