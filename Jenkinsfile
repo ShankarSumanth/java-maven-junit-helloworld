@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        def mvnHome = tool(name: 'M3', type: 'maven')
+        tool(name: 'M3', type: 'maven')
       }
     }
   }
