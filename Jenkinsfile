@@ -14,7 +14,7 @@ pipeline {
     stage('Build') {
       steps {
         tool(name: 'M3', type: 'maven')
-        M3 -Dmaven.test.failure.ignore clean package
+        M3 " -Dmaven.test.failure.ignore clean package"
       }
     }
     stage('Results') {
