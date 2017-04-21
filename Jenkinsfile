@@ -13,8 +13,8 @@ pipeline {
     }
     stage('Build') {
       steps {
-        tool 'M3'
-        sh '"\'${mvnHome}/bin/mvn\' -Dmaven.test.failure.ignore clean package"'
+        tool name: 'M3', type: 'maven'
+        sh '"\'M3/bin/mvn\' -Dmaven.test.failure.ignore clean package"'
       }
     }
     stage('Results') {
@@ -23,8 +23,5 @@ pipeline {
         archive 'target/*.jar'
       }
     }
-  }
-  environment {
-    mvnHome = 'M3'
   }
 }
