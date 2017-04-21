@@ -13,7 +13,6 @@ pipeline {
     }
     stage('Build') {
       steps {
-        tool(name: 'M3', type: 'maven')
         sh '"\'${mvnHome}/bin/mvn\' -Dmaven.test.failure.ignore clean package"'
       }
     }
@@ -25,6 +24,6 @@ pipeline {
     }
   }
   environment {
-    mvnHome = 'tool M3'
+    mvnHome = tool(name: 'M3', type: 'maven')
   }
 }
