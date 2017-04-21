@@ -1,15 +1,10 @@
 pipeline {
-    agent any
-    stages {
-        stage('Example') {
-            steps {
-                echo 'Hello World'
-            }
-        }
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        sh 'mvn -Dmaven.test.failure.ignore=true clean package'
+      }
     }
-    post { 
-        always { 
-            echo 'I will always say Hello again!'
-        }
-    }
+  }
 }
