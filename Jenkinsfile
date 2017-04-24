@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools {
+    java "java1.8"
+  }
   stages {
     stage('Build') {
       steps {
